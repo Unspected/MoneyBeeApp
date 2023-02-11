@@ -8,14 +8,88 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    var userData: [String: String] = ["user": "unspected",
+                                      "password": "n8qwlgs5b8a"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .backgroundColor
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+        hideKeyboardOnTap()
+        setupTextFieldViews(userNameTextField)
+        setupTextFieldViews(passwordTextField)
+        
+        
         
     }
+    
+    // MARK: - functions @IBOoutlets
+    
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+        secondVC.modalPresentationStyle = .fullScreen
+        
+        
+        if validUserName() && validUserName() {
+            self.present(secondVC, animated: true)
+        } else {
+            print("Wrong")
+        }
+    }
+    
 
+    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+        print("CreateAnAcoountPressed")
+    }
+    
+    
+}
+
+// MARK: - Validation Functions
+
+extension MainViewController {
+    
+    func validUserName() -> Bool {
+        if userNameTextField.text != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func validPassword() -> Bool {
+        if passwordTextField.text != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func setupTextFieldViews(_ textField: UITextField) {
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textField.frame.height))
+        textField.leftViewMode = .always
+    }
+    
+    
+}
+
+// MARK: - TextField Delegate
+
+extension MainViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
+
 

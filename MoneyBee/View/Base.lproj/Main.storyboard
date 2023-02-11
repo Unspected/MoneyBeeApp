@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIO-Ei-Q3O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -11,7 +11,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="MainViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,11 +43,13 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJZ-L9-ZNU">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJZ-L9-ZNU">
                                                 <rect key="frame" x="0.0" y="29" width="334" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="nickname"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -76,11 +78,13 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-UN-C6j">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-UN-C6j">
                                                 <rect key="frame" x="0.0" y="29" width="334" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -118,6 +122,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dOE-mH-FZm"/>
                                     <segue destination="hH8-so-rpy" kind="presentation" identifier="goToRegistration" modalPresentationStyle="automatic" id="gow-bm-eFp"/>
                                 </connections>
                             </button>
@@ -144,6 +149,9 @@
                                         <color key="value" name="buttonColor2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sLr-Bz-mhT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -163,6 +171,11 @@
                             <constraint firstItem="oXx-W0-6Dm" firstAttribute="centerX" secondItem="lRY-up-A1V" secondAttribute="centerX" id="z3v-kp-W4R"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0MS-9p-9ft"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="QGg-UN-C6j" id="olM-Sv-eqI"/>
+                        <outlet property="userNameTextField" destination="aJZ-L9-ZNU" id="vLY-Bl-iY9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yTK-uu-CPG">
-                                <rect key="frame" x="20" y="88" width="374" height="120"/>
+                                <rect key="frame" x="20" y="40" width="374" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="QBa-bR-P9v"/>
@@ -185,7 +198,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="adk-22-NdH">
-                                <rect key="frame" x="40" y="248" width="334" height="280"/>
+                                <rect key="frame" x="40" y="200" width="334" height="280"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-0g-ZrZ">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
@@ -193,7 +206,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tz-YX-ouo">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Password">
+                                                    <fragment content="Username">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor"/>
                                                             <font key="NSFont" size="16" name="SFPro-Bold"/>
@@ -226,7 +239,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8y3-fS-4jL">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Username">
+                                                    <fragment content="Password">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor"/>
                                                             <font key="NSFont" size="16" name="SFPro-Bold"/>
@@ -289,7 +302,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-xv-rKc" customClass="GradientButton" customModule="MoneyBee" customModuleProvider="target">
-                                <rect key="frame" x="60" y="608" width="294" height="50"/>
+                                <rect key="frame" x="60" y="560" width="294" height="50"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.68627450980000004" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="X8r-qe-fFH"/>
@@ -310,6 +323,9 @@
                                         <color key="value" name="buttonColor2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="creatAccountButtonPressed:" destination="hH8-so-rpy" eventType="touchUpInside" id="1dZ-5j-fap"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nge-rY-YEg"/>
@@ -326,7 +342,13 @@
                             <constraint firstItem="yTK-uu-CPG" firstAttribute="top" secondItem="Nge-rY-YEg" secondAttribute="top" constant="40" id="seY-Yi-a5C"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="p30-V0-BTD"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="lqt-Ch-GGX" id="mGC-Ny-27H"/>
+                        <outlet property="passwordTextField" destination="y9B-WF-dBG" id="OeV-HI-vpH"/>
+                        <outlet property="userNameTextField" destination="tYe-aX-pY5" id="LSU-cp-I8k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OT3-0U-Kmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +426,7 @@
         <!--Dashboard-->
         <scene sceneID="ZKL-js-hKF">
             <objects>
-                <viewController title="Dashboard" id="U00-Qs-h6V" sceneMemberID="viewController">
+                <viewController title="Dashboard" id="U00-Qs-h6V" customClass="DashBoardViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qwh-id-viK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,8 +442,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="l7A-fX-hGO">
             <objects>
-                <tabBarController id="NIO-Ei-Q3O" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="40v-Fb-nsS">
+                <tabBarController storyboardIdentifier="tabBarController" id="NIO-Ei-Q3O" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" restorationIdentifier="tabBar" insetsLayoutMarginsFromSafeArea="NO" id="40v-Fb-nsS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="tabBarColor"/>
@@ -461,7 +483,7 @@
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="backgroundColor">
-            <color red="0.10199999809265137" green="0.10999999940395355" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.098039215686274508" green="0.10999999940395355" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="buttonColor1">
             <color red="0.32941176470588235" green="0.64313725490196083" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
