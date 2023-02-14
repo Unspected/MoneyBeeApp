@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIO-Ei-Q3O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -147,6 +147,12 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                         <color key="value" name="buttonColor2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                        <point key="value" x="0.0" y="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -310,6 +316,7 @@
                                 <color key="tintColor" name="textColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create an Account" subtitle="">
+                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -361,20 +368,43 @@
                     <view key="view" contentMode="scaleToFill" id="PPk-JW-hTM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-y8-XmM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8px-1V-wHJ">
+                                        <rect key="frame" x="80" y="56" width="254" height="94"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="tabBarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8px-1V-wHJ" secondAttribute="trailing" constant="80" id="4gt-Ym-8ch"/>
+                                    <constraint firstAttribute="bottom" secondItem="8px-1V-wHJ" secondAttribute="bottom" id="GK5-yK-jYr"/>
+                                    <constraint firstItem="8px-1V-wHJ" firstAttribute="leading" secondItem="qbQ-y8-XmM" secondAttribute="leading" constant="80" id="M7n-te-2X8"/>
+                                    <constraint firstAttribute="height" constant="150" id="nlR-1u-xej"/>
+                                    <constraint firstItem="8px-1V-wHJ" firstAttribute="top" secondItem="qbQ-y8-XmM" secondAttribute="top" constant="56" id="vBa-6p-q6i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hAl-QA-Q8P"/>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qbQ-y8-XmM" firstAttribute="trailing" secondItem="hAl-QA-Q8P" secondAttribute="trailing" id="8Fa-Qv-MkE"/>
+                            <constraint firstItem="qbQ-y8-XmM" firstAttribute="top" secondItem="PPk-JW-hTM" secondAttribute="top" id="aIC-yN-Aar"/>
+                            <constraint firstItem="qbQ-y8-XmM" firstAttribute="leading" secondItem="PPk-JW-hTM" secondAttribute="leading" id="xKa-y6-tFA"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="TvQ-9z-lZc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pg-pX-pFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4023" y="-704"/>
+            <point key="canvasLocation" x="4021.739130434783" y="-704.46428571428567"/>
         </scene>
         <!--Add-->
         <scene sceneID="2hJ-Kw-ew3">
             <objects>
-                <viewController title="Add" id="ITc-wE-JVf" sceneMemberID="viewController">
+                <viewController title="Add" id="ITc-wE-JVf" customClass="AddCategoryViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lQz-41-uw7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,35 +423,81 @@
         <!--Goals-->
         <scene sceneID="A6B-UC-sml">
             <objects>
-                <viewController title="Goals" id="Hw0-kE-q6p" sceneMemberID="viewController">
+                <viewController title="Goals" id="Hw0-kE-q6p" customClass="GoalsViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYs-sp-77P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUr-zo-Gyi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ve3-dB-7dt">
+                                        <rect key="frame" x="80" y="56" width="254" height="94"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="tabBarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ve3-dB-7dt" secondAttribute="bottom" id="1FO-jH-6aG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ve3-dB-7dt" secondAttribute="trailing" constant="80" id="AKR-na-LzD"/>
+                                    <constraint firstItem="ve3-dB-7dt" firstAttribute="leading" secondItem="PUr-zo-Gyi" secondAttribute="leading" constant="80" id="WAi-y2-k9T"/>
+                                    <constraint firstAttribute="height" constant="150" id="Xb8-ab-vNa"/>
+                                    <constraint firstItem="ve3-dB-7dt" firstAttribute="top" secondItem="PUr-zo-Gyi" secondAttribute="top" constant="56" id="hgA-ea-s4I"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cBG-hP-bZe"/>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PUr-zo-Gyi" firstAttribute="top" secondItem="sYs-sp-77P" secondAttribute="top" id="Hvb-hm-yHJ"/>
+                            <constraint firstItem="PUr-zo-Gyi" firstAttribute="trailing" secondItem="cBG-hP-bZe" secondAttribute="trailing" id="eIp-uj-MJo"/>
+                            <constraint firstItem="PUr-zo-Gyi" firstAttribute="leading" secondItem="cBG-hP-bZe" secondAttribute="leading" id="q0P-rL-5Iq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" image="Goals" id="wOD-3e-ZUM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ira-V6-BdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="-704"/>
+            <point key="canvasLocation" x="1515.9420289855075" y="-704.46428571428567"/>
         </scene>
         <!--Budget-->
         <scene sceneID="URA-5Z-lgD">
             <objects>
-                <viewController title="Budget" id="A71-8m-7j0" sceneMemberID="viewController">
+                <viewController title="Budget" id="A71-8m-7j0" customClass="BudgetViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9y-U1-x2X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyZ-IA-i6c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topLogo" translatesAutoresizingMaskIntoConstraints="NO" id="agG-IG-Bju">
+                                        <rect key="frame" x="80" y="56" width="254" height="94"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="tabBarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="agG-IG-Bju" secondAttribute="bottom" id="6f3-EA-H2U"/>
+                                    <constraint firstAttribute="height" constant="150" id="JsL-GV-FY6"/>
+                                    <constraint firstAttribute="trailing" secondItem="agG-IG-Bju" secondAttribute="trailing" constant="80" id="Luq-Eh-Dic"/>
+                                    <constraint firstItem="agG-IG-Bju" firstAttribute="leading" secondItem="iyZ-IA-i6c" secondAttribute="leading" constant="80" id="c6b-cC-kkf"/>
+                                    <constraint firstItem="agG-IG-Bju" firstAttribute="top" secondItem="iyZ-IA-i6c" secondAttribute="top" constant="56" id="kww-WV-Nqu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Uhj-Sz-Doq"/>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iyZ-IA-i6c" firstAttribute="leading" secondItem="Uhj-Sz-Doq" secondAttribute="leading" id="02h-au-iPq"/>
+                            <constraint firstItem="iyZ-IA-i6c" firstAttribute="trailing" secondItem="Uhj-Sz-Doq" secondAttribute="trailing" id="1Qy-Fv-g0P"/>
+                            <constraint firstItem="iyZ-IA-i6c" firstAttribute="top" secondItem="p9y-U1-x2X" secondAttribute="top" id="dL4-jw-hTi"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Budget" image="Budget" id="F4S-JB-egC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Uq-VX-Jma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3184" y="-704"/>
+            <point key="canvasLocation" x="3182.608695652174" y="-704.46428571428567"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="ZKL-js-hKF">
@@ -430,19 +506,42 @@
                     <view key="view" contentMode="scaleToFill" id="Qwh-id-viK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6s-fD-oUM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KWV-0m-QMz">
+                                        <rect key="frame" x="80" y="56" width="254" height="94"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="tabBarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KWV-0m-QMz" secondAttribute="trailing" constant="80" id="H4w-IB-7Cz"/>
+                                    <constraint firstAttribute="bottom" secondItem="KWV-0m-QMz" secondAttribute="bottom" id="IVD-gB-o1x"/>
+                                    <constraint firstItem="KWV-0m-QMz" firstAttribute="top" secondItem="R6s-fD-oUM" secondAttribute="top" constant="56" id="Jjh-vx-tv5"/>
+                                    <constraint firstItem="KWV-0m-QMz" firstAttribute="leading" secondItem="R6s-fD-oUM" secondAttribute="leading" constant="80" id="od5-Ml-HAB"/>
+                                    <constraint firstAttribute="height" constant="150" id="qr2-Aa-IUF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cHj-kp-6Ne"/>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R6s-fD-oUM" firstAttribute="trailing" secondItem="cHj-kp-6Ne" secondAttribute="trailing" id="1VU-Xs-4cE"/>
+                            <constraint firstItem="R6s-fD-oUM" firstAttribute="top" secondItem="Qwh-id-viK" secondAttribute="top" id="bSi-Db-iAL"/>
+                            <constraint firstItem="R6s-fD-oUM" firstAttribute="leading" secondItem="cHj-kp-6Ne" secondAttribute="leading" id="gFp-9y-2EZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard" id="9F1-97-XZQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYS-bK-Iva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-704"/>
+            <point key="canvasLocation" x="792.75362318840587" y="-704.46428571428567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l7A-fX-hGO">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarController" id="NIO-Ei-Q3O" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="NIO-Ei-Q3O" customClass="TabBarController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" restorationIdentifier="tabBar" insetsLayoutMarginsFromSafeArea="NO" id="40v-Fb-nsS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -466,7 +565,7 @@
     </scenes>
     <designables>
         <designable name="JLP-xv-rKc">
-            <size key="intrinsicContentSize" width="165" height="34.5"/>
+            <size key="intrinsicContentSize" width="157.5" height="33"/>
         </designable>
         <designable name="lRY-up-A1V">
             <size key="intrinsicContentSize" width="172" height="34.5"/>
@@ -482,8 +581,9 @@
         <image name="logo" width="548" height="236"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="topLogo" width="492" height="154"/>
         <namedColor name="backgroundColor">
-            <color red="0.098039215686274508" green="0.10999999940395355" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.097999997437000275" green="0.10999999940395355" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="buttonColor1">
             <color red="0.32941176470588235" green="0.64313725490196083" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -495,7 +595,7 @@
             <color red="0.19607843137254902" green="0.21176470588235294" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
-            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textFieldColor">
             <color red="0.19599999487400055" green="0.21199999749660492" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

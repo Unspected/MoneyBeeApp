@@ -37,7 +37,6 @@ class MainViewController: UIViewController {
         let secondVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
         secondVC.modalPresentationStyle = .fullScreen
         
-        
         if validUserName() && validUserName() {
             self.present(secondVC, animated: true)
         } else {
