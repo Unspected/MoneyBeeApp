@@ -10,13 +10,15 @@ import UIKit
 class AddCategoryViewController: UIViewController {
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.tabBarController?.delegate = self
-        // Do any additional setup after loading the view.
+       
     }
-
+    
+    
 }
+
+
+
 

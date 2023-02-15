@@ -179,6 +179,8 @@
 			dependencies = (
 			);
 			name = MoneyBee;
+			packageProductDependencies = (
+			);
 			productName = MoneyBee;
 			productReference = E9FC826C2995A1C400C4095B /* MoneyBee.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +209,8 @@
 				Base,
 			);
 			mainGroup = E9FC82632995A1C300C4095B;
+			packageReferences = (
+			);
 			productRefGroup = E9FC826D2995A1C400C4095B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

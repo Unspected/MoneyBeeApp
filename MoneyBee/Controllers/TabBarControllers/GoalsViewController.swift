@@ -12,6 +12,7 @@ class GoalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Goals"
         // Do any additional setup after loading the view.
     }
     
