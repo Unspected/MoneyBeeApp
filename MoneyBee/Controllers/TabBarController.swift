@@ -40,6 +40,8 @@ class TabBarController: UITabBarController {
         return imageView
     }()
     
+    var currentView = UIView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +83,7 @@ extension TabBarController: UITabBarControllerDelegate {
         
         if  viewController.tabBarItem.title == "Add" {
             
-            let currentView = tabBarController.selectedViewController!.view!
+            currentView = tabBarController.selectedViewController!.view!
             
             // MARK: - SetUP Constrains
             popUpFrame.frame.size = CGSize(width: (view.frame.width / 2) + 100, height: 140)
@@ -99,7 +101,8 @@ extension TabBarController: UITabBarControllerDelegate {
             currentView.bringSubviewToFront(popUpFrame)
             return false
         } else {
-            popUpFrame.removeFromSuperview()
+            removePopupFromSuperView()
+            
             return true
         }
     }
@@ -108,24 +111,25 @@ extension TabBarController: UITabBarControllerDelegate {
     
     @objc func popupButtonPressed(_ sender:UIButton) {
         
+        let newCategory = storyboard?.instantiateViewController(withIdentifier: "Category") as! NewCategoryViewController
+        newCategory.modalPresentationStyle = .fullScreen
+        newCategory.modalTransitionStyle = .coverVertical
+        
         if sender.titleLabel?.text == "Saving Goal" {
             print("saving Goal")
         } else if sender.titleLabel?.text == "Transaction" {
             print("transaction")
-        } else {
-            print("Category")
+        } else if sender.titleLabel?.text == "Category" {
+            present(newCategory, animated: true)
+            removePopupFromSuperView()
         }
         
     }
-    @objc func settingButtonPresssed(_ sender:UIButton){
-        if let parentStackView = sender.superview as? UIStackView {
-            parentStackView.removeFromSuperview()
-            if let tabBC = UIApplication.shared.windows[0].rootViewController as? UITabBarController {
-                tabBC.selectedIndex = 2
-            }
-        }
-    }
     
+    func removePopupFromSuperView() {
+        popUpFrame.removeFromSuperview()
+        popUpFrame.alpha = 0
+    }
     
   
     

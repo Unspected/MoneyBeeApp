@@ -12,6 +12,7 @@
 		E916D5B529999CB10028A8E1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B429999CB10028A8E1 /* AccountViewController.swift */; };
 		E916D5B729999D0B0028A8E1 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */; };
 		E916D5BA2999FA970028A8E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B92999FA970028A8E1 /* TabBarController.swift */; };
+		E988C37D299D613400AED057 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988C37C299D613400AED057 /* NewCategoryViewController.swift */; };
 		E98E7EAC299AF5B600A00A62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */; };
 		E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */; };
 		E9A015E2299B037800C1E9B3 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9A015E1299B037800C1E9B3 /* SF-Pro-Display-Regular.otf */; };
@@ -37,6 +38,7 @@
 		E916D5B429999CB10028A8E1 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		E916D5B92999FA970028A8E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E988C37C299D613400AED057 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		E9A015E1299B037800C1E9B3 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -77,8 +79,17 @@
 				E916D5B029999C790028A8E1 /* AddCategoryViewController.swift */,
 				E916D5B229999C9E0028A8E1 /* BudgetViewController.swift */,
 				E916D5B429999CB10028A8E1 /* AccountViewController.swift */,
+				E988C37B299D610400AED057 /* AddMenuControllers */,
 			);
 			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		E988C37B299D610400AED057 /* AddMenuControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E988C37C299D613400AED057 /* NewCategoryViewController.swift */,
+			);
+			path = AddMenuControllers;
 			sourceTree = "<group>";
 		};
 		E9A015E0299B036200C1E9B3 /* Fonts */ = {
@@ -248,6 +259,7 @@
 				E9FC828B2995A2A500C4095B /* UIColor + Extensions.swift in Sources */,
 				E9A015E4299B0E7700C1E9B3 /* UIButton + Extensions.swift in Sources */,
 				E9ADD1A9299716B600865368 /* UIAlert + Extension.swift in Sources */,
+				E988C37D299D613400AED057 /* NewCategoryViewController.swift in Sources */,
 				E9ADD1AB299719FE00865368 /* DashBoardViewController.swift in Sources */,
 				E916D5B729999D0B0028A8E1 /* GoalsViewController.swift in Sources */,
 				E9FC827A2995A1C400C4095B /* MoneyBee.xcdatamodeld in Sources */,
