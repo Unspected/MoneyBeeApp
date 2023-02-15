@@ -16,5 +16,6 @@ extension UIButton {
         self.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 50, height: 50))
         self.setTitleColor(UIColor.white, for: .normal)
         self.backgroundColor = UIColor(named: "textColor")
+        
     }
 }
