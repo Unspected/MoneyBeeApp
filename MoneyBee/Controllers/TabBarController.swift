@@ -117,13 +117,24 @@ extension TabBarController: UITabBarControllerDelegate {
         
         if sender.titleLabel?.text == "Saving Goal" {
             print("saving Goal")
+            
         } else if sender.titleLabel?.text == "Transaction" {
-            print("transaction")
+            let newTransactionVc = setupViewController(storyBoardID: "Transaction", vc: NewTransactionViewController())
+            present(newTransactionVc, animated: true)
+            removePopupFromSuperView()
+            
         } else if sender.titleLabel?.text == "Category" {
-            present(newCategory, animated: true)
+            let newCategoryVc = setupViewController(storyBoardID: "Category", vc: NewCategoryViewController())
+            present(newCategoryVc, animated: true)
             removePopupFromSuperView()
         }
-        
+    }
+    
+    func setupViewController(storyBoardID: String, vc: UIViewController) -> UIViewController {
+        guard let newViewController = storyboard?.instantiateViewController(withIdentifier: storyBoardID) else { return vc }
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.modalTransitionStyle = .coverVertical
+        return newViewController
     }
     
     func removePopupFromSuperView() {

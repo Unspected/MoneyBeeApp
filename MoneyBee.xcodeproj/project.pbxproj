@@ -15,6 +15,7 @@
 		E988C37D299D613400AED057 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988C37C299D613400AED057 /* NewCategoryViewController.swift */; };
 		E98E7EAC299AF5B600A00A62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */; };
 		E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */; };
+		E995BAD7299DB14100DC3440 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995BAD6299DB14100DC3440 /* NewTransactionViewController.swift */; };
 		E9A015E2299B037800C1E9B3 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9A015E1299B037800C1E9B3 /* SF-Pro-Display-Regular.otf */; };
 		E9A015E4299B0E7700C1E9B3 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A015E3299B0E7700C1E9B3 /* UIButton + Extensions.swift */; };
 		E9ADD1A9299716B600865368 /* UIAlert + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1A8299716B600865368 /* UIAlert + Extension.swift */; };
@@ -41,6 +42,7 @@
 		E988C37C299D613400AED057 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		E995BAD6299DB14100DC3440 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
 		E9A015E1299B037800C1E9B3 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		E9A015E3299B0E7700C1E9B3 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 		E9ADD1A8299716B600865368 /* UIAlert + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert + Extension.swift"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				E988C37C299D613400AED057 /* NewCategoryViewController.swift */,
+				E995BAD6299DB14100DC3440 /* NewTransactionViewController.swift */,
 			);
 			path = AddMenuControllers;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				E9FC828D2995BB9200C4095B /* GradientButton + Extension.swift in Sources */,
 				E916D5B529999CB10028A8E1 /* AccountViewController.swift in Sources */,
 				E916D5BA2999FA970028A8E1 /* TabBarController.swift in Sources */,
+				E995BAD7299DB14100DC3440 /* NewTransactionViewController.swift in Sources */,
 				E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */,
 				E9FC82742995A1C400C4095B /* MainViewController.swift in Sources */,
 				E9FC828B2995A2A500C4095B /* UIColor + Extensions.swift in Sources */,
