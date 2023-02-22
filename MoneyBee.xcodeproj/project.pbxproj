@@ -12,6 +12,7 @@
 		E916D5B529999CB10028A8E1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B429999CB10028A8E1 /* AccountViewController.swift */; };
 		E916D5B729999D0B0028A8E1 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */; };
 		E916D5BA2999FA970028A8E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B92999FA970028A8E1 /* TabBarController.swift */; };
+		E96479B829A6CC8F005E7206 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96479B729A6CC8F005E7206 /* LoginViewModel.swift */; };
 		E988C37D299D613400AED057 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988C37C299D613400AED057 /* NewCategoryViewController.swift */; };
 		E98E7EAC299AF5B600A00A62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */; };
 		E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */; };
@@ -23,7 +24,7 @@
 		E9ADD1AD299726F000865368 /* HideKeyboard + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1AC299726F000865368 /* HideKeyboard + Extension.swift */; };
 		E9FC82702995A1C400C4095B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC826F2995A1C400C4095B /* AppDelegate.swift */; };
 		E9FC82722995A1C400C4095B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82712995A1C400C4095B /* SceneDelegate.swift */; };
-		E9FC82742995A1C400C4095B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82732995A1C400C4095B /* MainViewController.swift */; };
+		E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82732995A1C400C4095B /* LoginViewController.swift */; };
 		E9FC82772995A1C400C4095B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FC82752995A1C400C4095B /* Main.storyboard */; };
 		E9FC827A2995A1C400C4095B /* MoneyBee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82782995A1C400C4095B /* MoneyBee.xcdatamodeld */; };
 		E9FC827C2995A1C400C4095B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FC827B2995A1C400C4095B /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		E916D5B429999CB10028A8E1 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		E916D5B92999FA970028A8E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E96479B729A6CC8F005E7206 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E988C37C299D613400AED057 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		E9FC826C2995A1C400C4095B /* MoneyBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FC826F2995A1C400C4095B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9FC82712995A1C400C4095B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9FC82732995A1C400C4095B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E9FC82732995A1C400C4095B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E9FC82762995A1C400C4095B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9FC82792995A1C400C4095B /* MoneyBee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyBee.xcdatamodel; sourceTree = "<group>"; };
 		E9FC827B2995A1C400C4095B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,24 @@
 				E988C37B299D610400AED057 /* AddMenuControllers */,
 			);
 			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		E96479B529A6CBC8005E7206 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E9FC826F2995A1C400C4095B /* AppDelegate.swift */,
+				E9FC82712995A1C400C4095B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E96479B629A6CBF6005E7206 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				E9FC82732995A1C400C4095B /* LoginViewController.swift */,
+				E96479B729A6CC8F005E7206 /* LoginViewModel.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		E988C37B299D610400AED057 /* AddMenuControllers */ = {
@@ -124,8 +144,7 @@
 		E9FC826E2995A1C400C4095B /* MoneyBee */ = {
 			isa = PBXGroup;
 			children = (
-				E9FC826F2995A1C400C4095B /* AppDelegate.swift */,
-				E9FC82712995A1C400C4095B /* SceneDelegate.swift */,
+				E96479B529A6CBC8005E7206 /* Application */,
 				E9FC82882995A1EB00C4095B /* DataModels */,
 				E9FC82872995A1DB00C4095B /* Controllers */,
 				E9FC82862995A1D500C4095B /* View */,
@@ -147,7 +166,7 @@
 		E9FC82872995A1DB00C4095B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E9FC82732995A1C400C4095B /* MainViewController.swift */,
+				E96479B629A6CBF6005E7206 /* MainView */,
 				E9FC828E2995BCAF00C4095B /* RegistrationViewController.swift */,
 				E916D5B92999FA970028A8E1 /* TabBarController.swift */,
 				E916D5B829999D2B0028A8E1 /* TabBarControllers */,
@@ -259,7 +278,7 @@
 				E916D5BA2999FA970028A8E1 /* TabBarController.swift in Sources */,
 				E995BAD7299DB14100DC3440 /* NewTransactionViewController.swift in Sources */,
 				E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */,
-				E9FC82742995A1C400C4095B /* MainViewController.swift in Sources */,
+				E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */,
 				E9FC828B2995A2A500C4095B /* UIColor + Extensions.swift in Sources */,
 				E9A015E4299B0E7700C1E9B3 /* UIButton + Extensions.swift in Sources */,
 				E9ADD1A9299716B600865368 /* UIAlert + Extension.swift in Sources */,
@@ -273,6 +292,7 @@
 				E9FC82702995A1C400C4095B /* AppDelegate.swift in Sources */,
 				E9FC82722995A1C400C4095B /* SceneDelegate.swift in Sources */,
 				E916D5B129999C790028A8E1 /* AddCategoryViewController.swift in Sources */,
+				E96479B829A6CC8F005E7206 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

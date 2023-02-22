@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var userNameTextField: UITextField!
@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
 
 // MARK: - Validation Functions
 
-extension MainViewController {
+extension LoginViewController {
     
     func validUserName() -> Bool {
         if userNameTextField.text != nil {
@@ -82,7 +82,7 @@ extension MainViewController {
 
 // MARK: - TextField Delegate
 
-extension MainViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
