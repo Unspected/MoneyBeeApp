@@ -8,6 +8,10 @@
 import UIKit
 
 
+protocol TabControllerDelegate {
+    func typeOfViewController()
+
+}
 
 class TabBarController: UITabBarController {
     
@@ -42,6 +46,15 @@ class TabBarController: UITabBarController {
     
     var currentView = UIView()
     
+    var viewCategory: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 300, y: 100, width: 200, height: 200)
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    var protocolDelegate: TabControllerDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +66,12 @@ class TabBarController: UITabBarController {
         popUpFrame.addSubview(imageView)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     
     func setupButtons() {
         goalButton.addTarget(self, action: #selector(popupButtonPressed), for: .touchUpInside)
@@ -72,67 +91,75 @@ class TabBarController: UITabBarController {
 }
 
 extension TabBarController: UITabBarControllerDelegate {
-    
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.title == "Add" {
-            
-        }
-    }
-    
+   
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         if  viewController.tabBarItem.title == "Add" {
-            
             currentView = tabBarController.selectedViewController!.view!
-            
-            // MARK: - SetUP Constrains
             popUpFrame.frame.size = CGSize(width: (view.frame.width / 2) + 100, height: 140)
             popUpFrame.frame.origin.x = (currentView.frame.size.width - self.popUpFrame.frame.size.width) / 2
             popUpFrame.frame.origin.y = self.view.frame.height - 300
             fullStackMenu.frame = CGRect(x: popUpFrame.frame.size.width / 12, y: 20, width: popUpFrame.frame.width - 50, height: popUpFrame.frame.size.height - 40)
-            
+
             imageView.frame = CGRect(x: 50, y: popUpFrame.frame.size.height + 1, width: popUpFrame.frame.size.width / 2, height: popUpFrame.frame.size.height / 2)
-            
+
             UIView.animate(withDuration: 0.5) {
                 self.popUpFrame.alpha = 1
             }
-            
+
             currentView.addSubview(popUpFrame)
             currentView.bringSubviewToFront(popUpFrame)
             return false
+            
         } else {
             removePopupFromSuperView()
-            
             return true
         }
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+        switch item.title {
+            case "Add":
+                item.isEnabled = false
+            default:
+                tabBar.items?[2].isEnabled = true
+        }
+    
+    }
     
     
     @objc func popupButtonPressed(_ sender:UIButton) {
-        
-        let newCategory = storyboard?.instantiateViewController(withIdentifier: "Category") as! NewCategoryViewController
-        newCategory.modalPresentationStyle = .fullScreen
-        newCategory.modalTransitionStyle = .coverVertical
+        let navVC = self.viewControllers![2] as! AddViewController
         
         if sender.titleLabel?.text == "Saving Goal" {
-            print("saving Goal")
+            //WORKS СДЕЛАТЬ ЧЕРЕЗ ЭТОТ МЕТОД
+            
+            navVC.typeView = "Saving Goal"
+            protocolDelegate?.typeOfViewController()
+            self.selectedIndex = 2
+            removePopupFromSuperView()
+            
             
         } else if sender.titleLabel?.text == "Transaction" {
-            let newTransactionVc = setupViewController(storyBoardID: "Transaction", vc: NewTransactionViewController())
-            present(newTransactionVc, animated: true)
+          //  let newTransactionVc = setupViewController(storyBoardID: "Transaction", vc: NewTransactionViewController())
+          //  present(newTransactionVc, animated: true)
+            navVC.typeView = "Transaction"
+            protocolDelegate?.typeOfViewController()
+            self.selectedIndex = 2
             removePopupFromSuperView()
             
         } else if sender.titleLabel?.text == "Category" {
-            let newCategoryVc = setupViewController(storyBoardID: "Category", vc: NewCategoryViewController())
-            present(newCategoryVc, animated: true)
+            navVC.typeView = "Category"
+            protocolDelegate?.typeOfViewController()
+            self.selectedIndex = 2
             removePopupFromSuperView()
         }
     }
     
     func setupViewController(storyBoardID: String, vc: UIViewController) -> UIViewController {
         guard let newViewController = storyboard?.instantiateViewController(withIdentifier: storyBoardID) else { return vc }
-        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.modalPresentationStyle = .overCurrentContext
         newViewController.modalTransitionStyle = .coverVertical
         return newViewController
     }
@@ -142,6 +169,5 @@ extension TabBarController: UITabBarControllerDelegate {
         popUpFrame.alpha = 0
     }
     
-  
-    
 }
+

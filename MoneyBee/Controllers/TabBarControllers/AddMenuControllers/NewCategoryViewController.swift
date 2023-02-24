@@ -12,7 +12,7 @@ class NewCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
     }
     
 

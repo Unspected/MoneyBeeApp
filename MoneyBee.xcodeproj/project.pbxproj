@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E916D5B129999C790028A8E1 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B029999C790028A8E1 /* AddCategoryViewController.swift */; };
+		E916D5B129999C790028A8E1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B029999C790028A8E1 /* AddViewController.swift */; };
 		E916D5B329999C9E0028A8E1 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B229999C9E0028A8E1 /* BudgetViewController.swift */; };
 		E916D5B529999CB10028A8E1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B429999CB10028A8E1 /* AccountViewController.swift */; };
 		E916D5B729999D0B0028A8E1 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */; };
@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E916D5B029999C790028A8E1 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		E916D5B029999C790028A8E1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E916D5B229999C9E0028A8E1 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		E916D5B429999CB10028A8E1 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			children = (
 				E9ADD1AA299719FE00865368 /* DashBoardViewController.swift */,
 				E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */,
-				E916D5B029999C790028A8E1 /* AddCategoryViewController.swift */,
+				E916D5B029999C790028A8E1 /* AddViewController.swift */,
 				E916D5B229999C9E0028A8E1 /* BudgetViewController.swift */,
 				E916D5B429999CB10028A8E1 /* AccountViewController.swift */,
 				E988C37B299D610400AED057 /* AddMenuControllers */,
@@ -291,7 +291,7 @@
 				E9FC828F2995BCAF00C4095B /* RegistrationViewController.swift in Sources */,
 				E9FC82702995A1C400C4095B /* AppDelegate.swift in Sources */,
 				E9FC82722995A1C400C4095B /* SceneDelegate.swift in Sources */,
-				E916D5B129999C790028A8E1 /* AddCategoryViewController.swift in Sources */,
+				E916D5B129999C790028A8E1 /* AddViewController.swift in Sources */,
 				E96479B829A6CC8F005E7206 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

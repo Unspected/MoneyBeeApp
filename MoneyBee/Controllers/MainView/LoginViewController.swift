@@ -26,8 +26,6 @@ class LoginViewController: UIViewController {
         setupTextFieldViews(userNameTextField)
         setupTextFieldViews(passwordTextField)
         
-        
-        
     }
     
     // MARK: - functions @IBOoutlets
