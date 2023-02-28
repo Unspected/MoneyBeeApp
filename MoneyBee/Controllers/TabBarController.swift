@@ -46,29 +46,17 @@ class TabBarController: UITabBarController {
     
     var currentView = UIView()
     
-    var viewCategory: UIView = {
-        let view = UIView()
-        view.frame = CGRect(x: 300, y: 100, width: 200, height: 200)
-        view.backgroundColor = .white
-        return view
-    }()
-    
     var protocolDelegate: TabControllerDelegate?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.delegate = self
         setupButtons()
         setupStacks()
         popUpFrame.addSubview(fullStackMenu)
         popUpFrame.addSubview(imageView)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
     }
     
@@ -98,10 +86,13 @@ extension TabBarController: UITabBarControllerDelegate {
             currentView = tabBarController.selectedViewController!.view!
             popUpFrame.frame.size = CGSize(width: (view.frame.width / 2) + 100, height: 140)
             popUpFrame.frame.origin.x = (currentView.frame.size.width - self.popUpFrame.frame.size.width) / 2
-            popUpFrame.frame.origin.y = self.view.frame.height - 300
+            popUpFrame.frame.origin.y = self.view.frame.height - 280
             fullStackMenu.frame = CGRect(x: popUpFrame.frame.size.width / 12, y: 20, width: popUpFrame.frame.width - 50, height: popUpFrame.frame.size.height - 40)
 
-            imageView.frame = CGRect(x: 50, y: popUpFrame.frame.size.height + 1, width: popUpFrame.frame.size.width / 2, height: popUpFrame.frame.size.height / 2)
+
+            imageView.frame.size = CGSize(width: (popUpFrame.frame.width / 2), height: popUpFrame.frame.height / 3)
+            imageView.frame.origin.x = (popUpFrame.frame.size.width - self.imageView.frame.size.width) / 2
+            imageView.frame.origin.y = popUpFrame.frame.size.height - 1
 
             UIView.animate(withDuration: 0.5) {
                 self.popUpFrame.alpha = 1
@@ -142,8 +133,6 @@ extension TabBarController: UITabBarControllerDelegate {
             
             
         } else if sender.titleLabel?.text == "Transaction" {
-          //  let newTransactionVc = setupViewController(storyBoardID: "Transaction", vc: NewTransactionViewController())
-          //  present(newTransactionVc, animated: true)
             navVC.typeView = "Transaction"
             protocolDelegate?.typeOfViewController()
             self.selectedIndex = 2

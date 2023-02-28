@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -489,24 +490,51 @@
                                     <constraint firstItem="ve3-dB-7dt" firstAttribute="top" secondItem="PUr-zo-Gyi" secondAttribute="top" constant="56" id="hgA-ea-s4I"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGl-NJ-gdG">
-                                <rect key="frame" x="173.5" y="210" width="67.5" height="30.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGl-NJ-gdG">
+                                <rect key="frame" x="130" y="210" width="154" height="30.5"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="26"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-Py-74I">
+                                <rect key="frame" x="5" y="265.5" width="404" height="630.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="HDe-f2-h6g">
+                                    <size key="itemSize" width="207" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="goalCell" id="ztD-o1-22j">
+                                        <rect key="frame" x="98.5" y="0.0" width="207" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p8G-v5-MBl">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cBG-hP-bZe"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ioe-Py-74I" firstAttribute="leading" secondItem="cBG-hP-bZe" secondAttribute="leading" constant="5" id="6sj-Fn-Du0"/>
                             <constraint firstItem="PUr-zo-Gyi" firstAttribute="top" secondItem="sYs-sp-77P" secondAttribute="top" id="Hvb-hm-yHJ"/>
+                            <constraint firstItem="Ioe-Py-74I" firstAttribute="trailing" secondItem="cBG-hP-bZe" secondAttribute="trailing" constant="-5" id="PCm-hn-ef7"/>
                             <constraint firstItem="VGl-NJ-gdG" firstAttribute="centerX" secondItem="sYs-sp-77P" secondAttribute="centerX" id="azn-5T-mTQ"/>
                             <constraint firstItem="PUr-zo-Gyi" firstAttribute="trailing" secondItem="cBG-hP-bZe" secondAttribute="trailing" id="eIp-uj-MJo"/>
+                            <constraint firstAttribute="bottom" secondItem="Ioe-Py-74I" secondAttribute="bottom" id="fnf-Zr-upc"/>
                             <constraint firstItem="VGl-NJ-gdG" firstAttribute="top" secondItem="PUr-zo-Gyi" secondAttribute="bottom" constant="60" id="mhg-TY-HW9"/>
                             <constraint firstItem="PUr-zo-Gyi" firstAttribute="leading" secondItem="cBG-hP-bZe" secondAttribute="leading" id="q0P-rL-5Iq"/>
+                            <constraint firstItem="Ioe-Py-74I" firstAttribute="top" secondItem="VGl-NJ-gdG" secondAttribute="bottom" constant="25" id="qKY-7M-DfE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" image="Goals" id="wOD-3e-ZUM"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ioe-Py-74I" id="Adq-dN-dX3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ira-V6-BdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -536,13 +564,27 @@
                                     <constraint firstItem="agG-IG-Bju" firstAttribute="top" secondItem="iyZ-IA-i6c" secondAttribute="top" constant="56" id="kww-WV-Nqu"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wud-1d-jhz">
+                                <rect key="frame" x="164.5" y="210" width="85" height="31"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Budget">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor"/>
+                                            <font key="NSFont" size="26" name="SFPro-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uhj-Sz-Doq"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="iyZ-IA-i6c" firstAttribute="leading" secondItem="Uhj-Sz-Doq" secondAttribute="leading" id="02h-au-iPq"/>
                             <constraint firstItem="iyZ-IA-i6c" firstAttribute="trailing" secondItem="Uhj-Sz-Doq" secondAttribute="trailing" id="1Qy-Fv-g0P"/>
+                            <constraint firstItem="Wud-1d-jhz" firstAttribute="top" secondItem="iyZ-IA-i6c" secondAttribute="bottom" constant="60" id="5oF-Xh-oA6"/>
                             <constraint firstItem="iyZ-IA-i6c" firstAttribute="top" secondItem="p9y-U1-x2X" secondAttribute="top" id="dL4-jw-hTi"/>
+                            <constraint firstItem="Wud-1d-jhz" firstAttribute="centerX" secondItem="p9y-U1-x2X" secondAttribute="centerX" id="tnn-zt-aGd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Budget" image="Budget" id="F4S-JB-egC"/>

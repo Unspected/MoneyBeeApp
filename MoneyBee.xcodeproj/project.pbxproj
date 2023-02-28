@@ -22,6 +22,7 @@
 		E9ADD1A9299716B600865368 /* UIAlert + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1A8299716B600865368 /* UIAlert + Extension.swift */; };
 		E9ADD1AB299719FE00865368 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1AA299719FE00865368 /* DashBoardViewController.swift */; };
 		E9ADD1AD299726F000865368 /* HideKeyboard + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1AC299726F000865368 /* HideKeyboard + Extension.swift */; };
+		E9BE096C29AD6B5E0072AC1F /* GoalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BE096B29AD6B5E0072AC1F /* GoalViewCell.swift */; };
 		E9FC82702995A1C400C4095B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC826F2995A1C400C4095B /* AppDelegate.swift */; };
 		E9FC82722995A1C400C4095B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82712995A1C400C4095B /* SceneDelegate.swift */; };
 		E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82732995A1C400C4095B /* LoginViewController.swift */; };
@@ -50,6 +51,7 @@
 		E9ADD1A8299716B600865368 /* UIAlert + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert + Extension.swift"; sourceTree = "<group>"; };
 		E9ADD1AA299719FE00865368 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		E9ADD1AC299726F000865368 /* HideKeyboard + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HideKeyboard + Extension.swift"; sourceTree = "<group>"; };
+		E9BE096B29AD6B5E0072AC1F /* GoalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewCell.swift; sourceTree = "<group>"; };
 		E9FC826C2995A1C400C4095B /* MoneyBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FC826F2995A1C400C4095B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9FC82712995A1C400C4095B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				E9ADD1AA299719FE00865368 /* DashBoardViewController.swift */,
 				E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */,
+				E9BE096A29AD6B370072AC1F /* GoalCell */,
 				E916D5B029999C790028A8E1 /* AddViewController.swift */,
 				E916D5B229999C9E0028A8E1 /* BudgetViewController.swift */,
 				E916D5B429999CB10028A8E1 /* AccountViewController.swift */,
@@ -121,6 +124,14 @@
 				E9A015E1299B037800C1E9B3 /* SF-Pro-Display-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E9BE096A29AD6B370072AC1F /* GoalCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9BE096B29AD6B5E0072AC1F /* GoalViewCell.swift */,
+			);
+			path = GoalCell;
 			sourceTree = "<group>";
 		};
 		E9FC82632995A1C300C4095B = {
@@ -281,6 +292,7 @@
 				E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */,
 				E9FC828B2995A2A500C4095B /* UIColor + Extensions.swift in Sources */,
 				E9A015E4299B0E7700C1E9B3 /* UIButton + Extensions.swift in Sources */,
+				E9BE096C29AD6B5E0072AC1F /* GoalViewCell.swift in Sources */,
 				E9ADD1A9299716B600865368 /* UIAlert + Extension.swift in Sources */,
 				E988C37D299D613400AED057 /* NewCategoryViewController.swift in Sources */,
 				E9ADD1AB299719FE00865368 /* DashBoardViewController.swift in Sources */,
