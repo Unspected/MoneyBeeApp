@@ -10,18 +10,18 @@ import UIKit
 
 extension UIViewController {
     
-    func customAlert(title: String, message: String?) {
+    func customAlert(title: String, message: String?, handler: ((UIAlertAction) -> Void)?) {
         // Создание окна алерта
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         // Создание действий под алертом ОК кнопка окей и закрытие handler сделан для действий
-        let actionAlert = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
+        let actionAlert = UIAlertAction(title: "OK", style: .default, handler: handler)
         // Добавление функциональной кнопки для нашего окна алерт
         alert.addAction(actionAlert)
         
         // Подключение алерта уже к выводу на экран
         present(alert, animated: true, completion: nil)
     }
+    
 }
 
 

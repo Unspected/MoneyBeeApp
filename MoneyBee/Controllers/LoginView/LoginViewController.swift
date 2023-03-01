@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         hideKeyboardOnTap()

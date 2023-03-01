@@ -205,7 +205,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="adk-22-NdH">
-                                <rect key="frame" x="40" y="200" width="334" height="280"/>
+                                <rect key="frame" x="40" y="200" width="334" height="380"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-0g-ZrZ">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
@@ -226,7 +226,8 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-aX-pY5">
                                                 <rect key="frame" x="0.0" y="29" width="334" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -246,7 +247,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8y3-fS-4jL">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Password">
+                                                    <fragment content="FirstName">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor"/>
                                                             <font key="NSFont" size="16" name="SFPro-Bold"/>
@@ -259,7 +260,8 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y9B-WF-dBG">
                                                 <rect key="frame" x="0.0" y="29" width="334" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -279,7 +281,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qS9-d4-dpu">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Confirm Password">
+                                                    <fragment content="LastName">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor"/>
                                                             <font key="NSFont" size="16" name="SFPro-Bold"/>
@@ -292,7 +294,8 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lqt-Ch-GGX">
                                                 <rect key="frame" x="0.0" y="29" width="334" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -306,10 +309,48 @@
                                             <constraint firstAttribute="height" constant="80" id="C7D-lp-03W"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-zs-2wo">
+                                        <rect key="frame" x="0.0" y="300" width="334" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-Dy-oRI">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Password">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor"/>
+                                                            <font key="NSFont" size="16" name="SFPro-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-jN-Ts0">
+                                                <rect key="frame" x="0.0" y="29" width="334" height="51"/>
+                                                <color key="backgroundColor" name="textFieldColor"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="HFt-aH-BKD"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="yb0-WS-Y6a" firstAttribute="top" secondItem="rRK-WY-Fl6" secondAttribute="bottom" constant="20" id="U8y-qa-a1w"/>
+                                    <constraint firstItem="rRK-WY-Fl6" firstAttribute="top" secondItem="ERA-0g-ZrZ" secondAttribute="bottom" constant="20" id="UwV-WM-r5x"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-xv-rKc" customClass="GradientButton" customModule="MoneyBee" customModuleProvider="target">
-                                <rect key="frame" x="60" y="560" width="294" height="50"/>
+                                <rect key="frame" x="60" y="689" width="294" height="50"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.68627450980000004" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="X8r-qe-fFH"/>
@@ -343,19 +384,20 @@
                             <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="adk-22-NdH" secondAttribute="trailing" constant="40" id="DO7-Xf-jaA"/>
                             <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="yTK-uu-CPG" secondAttribute="trailing" constant="20" id="G19-1Z-PLj"/>
                             <constraint firstItem="adk-22-NdH" firstAttribute="top" secondItem="yTK-uu-CPG" secondAttribute="bottom" constant="40" id="Hfv-Lj-hUo"/>
-                            <constraint firstItem="JLP-xv-rKc" firstAttribute="top" secondItem="adk-22-NdH" secondAttribute="bottom" constant="80" id="dWR-9x-vxd"/>
                             <constraint firstItem="yTK-uu-CPG" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="20" id="ojH-Ca-Lme"/>
                             <constraint firstItem="JLP-xv-rKc" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="60" id="pbN-Pt-las"/>
                             <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="JLP-xv-rKc" secondAttribute="trailing" constant="60" id="q61-lR-2V0"/>
+                            <constraint firstItem="Nge-rY-YEg" firstAttribute="bottom" secondItem="JLP-xv-rKc" secondAttribute="bottom" constant="50" id="ru7-UM-oNy"/>
                             <constraint firstItem="yTK-uu-CPG" firstAttribute="top" secondItem="Nge-rY-YEg" secondAttribute="top" constant="40" id="seY-Yi-a5C"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="confirmPasswordTextField" destination="lqt-Ch-GGX" id="mGC-Ny-27H"/>
-                        <outlet property="passwordTextField" destination="y9B-WF-dBG" id="OeV-HI-vpH"/>
-                        <outlet property="userNameTextField" destination="tYe-aX-pY5" id="LSU-cp-I8k"/>
+                        <outlet property="firstNameTextField" destination="y9B-WF-dBG" id="WtS-68-HhA"/>
+                        <outlet property="lastNameTextField" destination="lqt-Ch-GGX" id="6mn-vx-tgK"/>
+                        <outlet property="passwordTextField" destination="x4n-jN-Ts0" id="Z9J-Kj-FZJ"/>
+                        <outlet property="userNameTextField" destination="tYe-aX-pY5" id="IQL-WE-Gjw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OT3-0U-Kmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

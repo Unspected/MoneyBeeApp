@@ -23,6 +23,9 @@
 		E9ADD1AB299719FE00865368 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1AA299719FE00865368 /* DashBoardViewController.swift */; };
 		E9ADD1AD299726F000865368 /* HideKeyboard + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADD1AC299726F000865368 /* HideKeyboard + Extension.swift */; };
 		E9BE096C29AD6B5E0072AC1F /* GoalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BE096B29AD6B5E0072AC1F /* GoalViewCell.swift */; };
+		E9E9182029AE6A72009169B7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9181F29AE6A72009169B7 /* DataManager.swift */; };
+		E9E9182229AE6B9A009169B7 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9182129AE6B9A009169B7 /* ObservableObject.swift */; };
+		E9E9182529AE6E9B009169B7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9182429AE6E9B009169B7 /* RegistrationViewModel.swift */; };
 		E9FC82702995A1C400C4095B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC826F2995A1C400C4095B /* AppDelegate.swift */; };
 		E9FC82722995A1C400C4095B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82712995A1C400C4095B /* SceneDelegate.swift */; };
 		E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC82732995A1C400C4095B /* LoginViewController.swift */; };
@@ -52,6 +55,9 @@
 		E9ADD1AA299719FE00865368 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		E9ADD1AC299726F000865368 /* HideKeyboard + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HideKeyboard + Extension.swift"; sourceTree = "<group>"; };
 		E9BE096B29AD6B5E0072AC1F /* GoalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewCell.swift; sourceTree = "<group>"; };
+		E9E9181F29AE6A72009169B7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E9E9182129AE6B9A009169B7 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
+		E9E9182429AE6E9B009169B7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E9FC826C2995A1C400C4095B /* MoneyBee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FC826F2995A1C400C4095B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9FC82712995A1C400C4095B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,13 +106,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		E96479B629A6CBF6005E7206 /* MainView */ = {
+		E96479B629A6CBF6005E7206 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
 				E9FC82732995A1C400C4095B /* LoginViewController.swift */,
 				E96479B729A6CC8F005E7206 /* LoginViewModel.swift */,
 			);
-			path = MainView;
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		E988C37B299D610400AED057 /* AddMenuControllers */ = {
@@ -132,6 +138,15 @@
 				E9BE096B29AD6B5E0072AC1F /* GoalViewCell.swift */,
 			);
 			path = GoalCell;
+			sourceTree = "<group>";
+		};
+		E9E9182329AE6E89009169B7 /* RegistrationView */ = {
+			isa = PBXGroup;
+			children = (
+				E9FC828E2995BCAF00C4095B /* RegistrationViewController.swift */,
+				E9E9182429AE6E9B009169B7 /* RegistrationViewModel.swift */,
+			);
+			path = RegistrationView;
 			sourceTree = "<group>";
 		};
 		E9FC82632995A1C300C4095B = {
@@ -177,8 +192,8 @@
 		E9FC82872995A1DB00C4095B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E96479B629A6CBF6005E7206 /* MainView */,
-				E9FC828E2995BCAF00C4095B /* RegistrationViewController.swift */,
+				E96479B629A6CBF6005E7206 /* LoginView */,
+				E9E9182329AE6E89009169B7 /* RegistrationView */,
 				E916D5B92999FA970028A8E1 /* TabBarController.swift */,
 				E916D5B829999D2B0028A8E1 /* TabBarControllers */,
 			);
@@ -189,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				E9FC82782995A1C400C4095B /* MoneyBee.xcdatamodeld */,
+				E9E9181F29AE6A72009169B7 /* DataManager.swift */,
+				E9E9182129AE6B9A009169B7 /* ObservableObject.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -288,6 +305,8 @@
 				E916D5B529999CB10028A8E1 /* AccountViewController.swift in Sources */,
 				E916D5BA2999FA970028A8E1 /* TabBarController.swift in Sources */,
 				E995BAD7299DB14100DC3440 /* NewTransactionViewController.swift in Sources */,
+				E9E9182229AE6B9A009169B7 /* ObservableObject.swift in Sources */,
+				E9E9182029AE6A72009169B7 /* DataManager.swift in Sources */,
 				E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */,
 				E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */,
 				E9FC828B2995A2A500C4095B /* UIColor + Extensions.swift in Sources */,
@@ -301,6 +320,7 @@
 				E98E7EAC299AF5B600A00A62 /* UILabel + Extension.swift in Sources */,
 				E916D5B329999C9E0028A8E1 /* BudgetViewController.swift in Sources */,
 				E9FC828F2995BCAF00C4095B /* RegistrationViewController.swift in Sources */,
+				E9E9182529AE6E9B009169B7 /* RegistrationViewModel.swift in Sources */,
 				E9FC82702995A1C400C4095B /* AppDelegate.swift in Sources */,
 				E9FC82722995A1C400C4095B /* SceneDelegate.swift in Sources */,
 				E916D5B129999C790028A8E1 /* AddViewController.swift in Sources */,
