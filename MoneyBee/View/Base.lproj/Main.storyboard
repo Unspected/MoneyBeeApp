@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -34,7 +35,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bj-Kb-Uh7">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Username">
+                                                    <fragment content="Login">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor"/>
                                                             <font key="NSFont" size="16" name="SFPro-Bold"/>
@@ -50,7 +51,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="nickname"/>
+                                                <textInputTraits key="textInputTraits" textContentType="nickname"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -123,8 +124,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dOE-mH-FZm"/>
-                                    <segue destination="hH8-so-rpy" kind="presentation" identifier="goToRegistration" modalPresentationStyle="automatic" id="gow-bm-eFp"/>
+                                    <segue destination="hH8-so-rpy" kind="presentation" id="o27-8o-tNJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXx-W0-6Dm" customClass="GradientButton" customModule="MoneyBee" customModuleProvider="target">
@@ -180,8 +180,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="0MS-9p-9ft"/>
                     <connections>
+                        <outlet property="loginTextField" destination="aJZ-L9-ZNU" id="CEQ-0y-b1a"/>
                         <outlet property="passwordTextField" destination="QGg-UN-C6j" id="olM-Sv-eqI"/>
-                        <outlet property="userNameTextField" destination="aJZ-L9-ZNU" id="vLY-Bl-iY9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -204,14 +204,14 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="abp-MF-tMK"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="adk-22-NdH">
-                                <rect key="frame" x="40" y="200" width="334" height="380"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="adk-22-NdH">
+                                <rect key="frame" x="20" y="180" width="374" height="350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-0g-ZrZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tz-YX-ouo">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Username">
                                                         <attributes>
@@ -224,7 +224,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-aX-pY5">
-                                                <rect key="frame" x="0.0" y="29" width="334" height="51"/>
+                                                <rect key="frame" x="0.0" y="29" width="374" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
                                                 <color key="textColor" name="textColor"/>
                                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
@@ -242,10 +242,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rRK-WY-Fl6">
-                                        <rect key="frame" x="0.0" y="100" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="90" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8y3-fS-4jL">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="FirstName">
                                                         <attributes>
@@ -258,7 +258,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y9B-WF-dBG">
-                                                <rect key="frame" x="0.0" y="29" width="334" height="51"/>
+                                                <rect key="frame" x="0.0" y="29" width="374" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
                                                 <color key="textColor" name="textColor"/>
                                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
@@ -276,10 +276,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yb0-WS-Y6a">
-                                        <rect key="frame" x="0.0" y="200" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="180" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qS9-d4-dpu">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="LastName">
                                                         <attributes>
@@ -292,7 +292,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lqt-Ch-GGX">
-                                                <rect key="frame" x="0.0" y="29" width="334" height="51"/>
+                                                <rect key="frame" x="0.0" y="29" width="374" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
                                                 <color key="textColor" name="textColor"/>
                                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
@@ -310,10 +310,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="bottom" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-zs-2wo">
-                                        <rect key="frame" x="0.0" y="300" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="270" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-Dy-oRI">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Password">
                                                         <attributes>
@@ -326,7 +326,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-jN-Ts0">
-                                                <rect key="frame" x="0.0" y="29" width="334" height="51"/>
+                                                <rect key="frame" x="0.0" y="29" width="374" height="51"/>
                                                 <color key="backgroundColor" name="textFieldColor"/>
                                                 <color key="textColor" name="textColor"/>
                                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="18"/>
@@ -344,13 +344,9 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="yb0-WS-Y6a" firstAttribute="top" secondItem="rRK-WY-Fl6" secondAttribute="bottom" constant="20" id="U8y-qa-a1w"/>
-                                    <constraint firstItem="rRK-WY-Fl6" firstAttribute="top" secondItem="ERA-0g-ZrZ" secondAttribute="bottom" constant="20" id="UwV-WM-r5x"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-xv-rKc" customClass="GradientButton" customModule="MoneyBee" customModuleProvider="target">
-                                <rect key="frame" x="60" y="689" width="294" height="50"/>
+                                <rect key="frame" x="60" y="680" width="294" height="50"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.68627450980000004" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="X8r-qe-fFH"/>
@@ -380,29 +376,31 @@
                         <viewLayoutGuide key="safeArea" id="Nge-rY-YEg"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="adk-22-NdH" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="40" id="7OD-Of-XlE"/>
-                            <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="adk-22-NdH" secondAttribute="trailing" constant="40" id="DO7-Xf-jaA"/>
+                            <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="JLP-xv-rKc" secondAttribute="trailing" constant="60" id="65T-gt-Cee"/>
                             <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="yTK-uu-CPG" secondAttribute="trailing" constant="20" id="G19-1Z-PLj"/>
-                            <constraint firstItem="adk-22-NdH" firstAttribute="top" secondItem="yTK-uu-CPG" secondAttribute="bottom" constant="40" id="Hfv-Lj-hUo"/>
+                            <constraint firstItem="adk-22-NdH" firstAttribute="top" secondItem="yTK-uu-CPG" secondAttribute="bottom" constant="20" id="HxH-Fx-ncm"/>
+                            <constraint firstItem="JLP-xv-rKc" firstAttribute="top" secondItem="adk-22-NdH" secondAttribute="bottom" constant="150" id="K5d-bd-O3q"/>
+                            <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="adk-22-NdH" secondAttribute="trailing" constant="20" id="f5z-Zv-vvO"/>
+                            <constraint firstItem="JLP-xv-rKc" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="60" id="h8Z-hO-nGb"/>
+                            <constraint firstItem="adk-22-NdH" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="20" id="hJ9-kL-M3D"/>
                             <constraint firstItem="yTK-uu-CPG" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="20" id="ojH-Ca-Lme"/>
-                            <constraint firstItem="JLP-xv-rKc" firstAttribute="leading" secondItem="Nge-rY-YEg" secondAttribute="leading" constant="60" id="pbN-Pt-las"/>
-                            <constraint firstItem="Nge-rY-YEg" firstAttribute="trailing" secondItem="JLP-xv-rKc" secondAttribute="trailing" constant="60" id="q61-lR-2V0"/>
-                            <constraint firstItem="Nge-rY-YEg" firstAttribute="bottom" secondItem="JLP-xv-rKc" secondAttribute="bottom" constant="50" id="ru7-UM-oNy"/>
                             <constraint firstItem="yTK-uu-CPG" firstAttribute="top" secondItem="Nge-rY-YEg" secondAttribute="top" constant="40" id="seY-Yi-a5C"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="createBtnTopConstraint" destination="K5d-bd-O3q" id="gjL-YF-aYg"/>
                         <outlet property="firstNameTextField" destination="y9B-WF-dBG" id="WtS-68-HhA"/>
                         <outlet property="lastNameTextField" destination="lqt-Ch-GGX" id="6mn-vx-tgK"/>
+                        <outlet property="logoTopConstrains" destination="seY-Yi-a5C" id="Sex-Oh-cmO"/>
                         <outlet property="passwordTextField" destination="x4n-jN-Ts0" id="Z9J-Kj-FZJ"/>
                         <outlet property="userNameTextField" destination="tYe-aX-pY5" id="IQL-WE-Gjw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OT3-0U-Kmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="-27"/>
+            <point key="canvasLocation" x="750.72463768115949" y="-27.455357142857142"/>
         </scene>
         <!--Account-->
         <scene sceneID="Sjs-Ip-kqL">
@@ -987,13 +985,21 @@
                                     <constraint firstAttribute="height" constant="150" id="qr2-Aa-IUF"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7K2-Iy-Kmi">
+                                <rect key="frame" x="143" y="210" width="128" height="30.5"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="26"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cHj-kp-6Ne"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="R6s-fD-oUM" firstAttribute="trailing" secondItem="cHj-kp-6Ne" secondAttribute="trailing" id="1VU-Xs-4cE"/>
+                            <constraint firstItem="7K2-Iy-Kmi" firstAttribute="top" secondItem="R6s-fD-oUM" secondAttribute="bottom" constant="60" id="Wh5-x3-lMH"/>
                             <constraint firstItem="R6s-fD-oUM" firstAttribute="top" secondItem="Qwh-id-viK" secondAttribute="top" id="bSi-Db-iAL"/>
                             <constraint firstItem="R6s-fD-oUM" firstAttribute="leading" secondItem="cHj-kp-6Ne" secondAttribute="leading" id="gFp-9y-2EZ"/>
+                            <constraint firstItem="7K2-Iy-Kmi" firstAttribute="centerX" secondItem="Qwh-id-viK" secondAttribute="centerX" id="rAd-Fs-Udf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard" id="9F1-97-XZQ"/>

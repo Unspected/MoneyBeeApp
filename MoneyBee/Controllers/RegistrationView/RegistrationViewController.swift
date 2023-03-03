@@ -20,14 +20,30 @@ class RegistrationViewController: UIViewController {
     
     let modelView = RegistrationViewModel()
     
+    @IBOutlet weak var logoTopConstrains: NSLayoutConstraint!
     
+    @IBOutlet weak var createBtnTopConstraint: NSLayoutConstraint!
     
     //MARK: - Public Methods
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTextFieldViews(userNameTextField)
+        setupTextFieldViews(firstNameTextField)
+        setupTextFieldViews(lastNameTextField)
+        setupTextFieldViews(passwordTextField)
+        changeElementsConstrains()
        
+    }
+    
+    func changeElementsConstrains() {
+        let deviceSize = UIScreen.main.bounds.size.height
+        if deviceSize < 700 {
+            logoTopConstrains.constant = 0
+            createBtnTopConstraint.constant = 40
+        }
+        
     }
     
     
@@ -37,16 +53,15 @@ class RegistrationViewController: UIViewController {
               let lastname = lastNameTextField.text, let password = passwordTextField.text else { return }
         
         if username.count > 2 && password.count > 6 {
-            modelView.checkExistingUser(username: username) { result in
+            modelView.checkExistingUser(username: username) { [weak self] result in
                 if result {
-                    self.modelView.registrationNewUser(login: username, pass: password, first: firstname, last: lastname)
-                    self.customAlert(title: "Sucess", message: "Congratulation User Successufully created") { _ in
-                        self.dismiss(animated: true)
+                    self?.modelView.registrationNewUser(login: username, pass: password, first: firstname, last: lastname)
+                    self?.customAlert(title: "Sucess", message: "Congratulation User Successufully created") { _ in
+                        self?.dismiss(animated: true)
                     }
-                    
                 } else {
-                    self.customAlert(title: "Error Registration", message: "User with this login already exists", handler: nil)
-                    self.userNameTextField.text = ""
+                    self?.customAlert(title: "Error Registration", message: "User with this login already exists", handler: nil)
+                    self?.userNameTextField.text = ""
                 }
             }
         } else {

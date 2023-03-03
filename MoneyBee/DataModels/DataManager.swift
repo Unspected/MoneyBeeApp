@@ -30,6 +30,19 @@ class DataManager {
         return newUser
     }
     
+    func loadUserData() -> [UserData] {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<UserData>(entityName: "UserData")
+        var userDataContainer = [UserData]()
+        do {
+            let result = try context.fetch(fetchRequest)
+            userDataContainer = result
+        } catch {
+            print(error)
+        }
+        return userDataContainer
+    }
+    
     func checkExistedUser(login: String ) -> Bool {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<UserData>(entityName: "UserData")

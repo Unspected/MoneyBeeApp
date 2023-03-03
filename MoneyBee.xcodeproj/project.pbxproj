@@ -13,6 +13,7 @@
 		E916D5B729999D0B0028A8E1 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */; };
 		E916D5BA2999FA970028A8E1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E916D5B92999FA970028A8E1 /* TabBarController.swift */; };
 		E96479B829A6CC8F005E7206 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96479B729A6CC8F005E7206 /* LoginViewModel.swift */; };
+		E982D33A29B12D6F004B3CFF /* UITextField + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982D33929B12D6F004B3CFF /* UITextField + Extensions.swift */; };
 		E988C37D299D613400AED057 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988C37C299D613400AED057 /* NewCategoryViewController.swift */; };
 		E98E7EAC299AF5B600A00A62 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */; };
 		E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */; };
@@ -45,6 +46,7 @@
 		E916D5B629999D0B0028A8E1 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		E916D5B92999FA970028A8E1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E96479B729A6CC8F005E7206 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E982D33929B12D6F004B3CFF /* UITextField + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extensions.swift"; sourceTree = "<group>"; };
 		E988C37C299D613400AED057 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				E98E7EAB299AF5B600A00A62 /* UILabel + Extension.swift */,
 				E98E7EAD299AF91300A00A62 /* UIStackView + Extensions.swift */,
 				E9A015E3299B0E7700C1E9B3 /* UIButton + Extensions.swift */,
+				E982D33929B12D6F004B3CFF /* UITextField + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				E9E9182029AE6A72009169B7 /* DataManager.swift in Sources */,
 				E98E7EAE299AF91300A00A62 /* UIStackView + Extensions.swift in Sources */,
 				E9FC82742995A1C400C4095B /* LoginViewController.swift in Sources */,
+				E982D33A29B12D6F004B3CFF /* UITextField + Extensions.swift in Sources */,
 				E9FC828B2995A2A500C4095B /* UIColor + Extensions.swift in Sources */,
 				E9A015E4299B0E7700C1E9B3 /* UIButton + Extensions.swift in Sources */,
 				E9BE096C29AD6B5E0072AC1F /* GoalViewCell.swift in Sources */,

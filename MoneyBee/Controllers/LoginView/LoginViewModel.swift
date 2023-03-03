@@ -9,5 +9,15 @@ import Foundation
 
 class LoginViewModel {
     
-    
+    func authorization(login: String, password: String, completion: @escaping(Bool) -> Void) {
+        let result = DataManager.shared.loadUserData()
+        if login == result.first?.login {
+            print("Sucess")
+            completion(true)
+        } else {
+            print("error")
+            completion(false)
+        }
+        
+    }
 }

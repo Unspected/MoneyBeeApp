@@ -9,22 +9,23 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginTextField: UITextField!
     
-    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     var userData: [String: String] = ["user": "unspected",
                                       "password": "n8qwlgs5b8a"]
     
+    private let modelView = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        userNameTextField.delegate = self
+        loginTextField.delegate = self
         passwordTextField.delegate = self
         hideKeyboardOnTap()
-        setupTextFieldViews(userNameTextField)
+        setupTextFieldViews(loginTextField)
         setupTextFieldViews(passwordTextField)
         
     }
@@ -32,52 +33,26 @@ class LoginViewController: UIViewController {
     // MARK: - functions @IBOoutlets
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
+        guard let saveLogin = loginTextField.text, let savePassword = passwordTextField.text else { return }
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let secondVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-        secondVC.modalPresentationStyle = .fullScreen
         
-        if validUserName() && validUserName() {
-            self.present(secondVC, animated: true)
-        } else {
-            print("Wrong")
+        modelView.authorization(login: saveLogin, password: savePassword) { [weak self] success in
+            if success {
+                secondVC.modalPresentationStyle = .fullScreen
+                self?.present(secondVC, animated: true)
+            } else {
+                self?.customAlert(title: "Authorization Error", message: "Wrong Login or Password", handler: nil)
+                self?.loginTextField.text = ""
+                self?.passwordTextField.text = ""
+                
+            }
         }
+ 
     }
-    
-
-    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-        print("CreateAnAcoountPressed")
-    }
-    
     
 }
 
-// MARK: - Validation Functions
-
-extension LoginViewController {
-    
-    func validUserName() -> Bool {
-        if userNameTextField.text != nil {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func validPassword() -> Bool {
-        if passwordTextField.text != nil {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func setupTextFieldViews(_ textField: UITextField) {
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textField.frame.height))
-        textField.leftViewMode = .always
-    }
-    
-    
-}
 
 // MARK: - TextField Delegate
 
