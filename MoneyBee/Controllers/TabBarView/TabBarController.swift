@@ -8,7 +8,7 @@
 import UIKit
 
 
-protocol TabControllerDelegate {
+protocol MenuControllerDelegate {
     func typeOfViewController()
 
 }
@@ -46,7 +46,11 @@ class TabBarController: UITabBarController {
     
     var currentView = UIView()
     
-    var protocolDelegate: TabControllerDelegate?
+    var protocolDelegate: MenuControllerDelegate?
+    
+    var viewControllerChoosen: UIViewController?
+    
+    var nameView = ""
 
     
     override func viewDidLoad() {
@@ -57,7 +61,7 @@ class TabBarController: UITabBarController {
         setupStacks()
         popUpFrame.addSubview(fullStackMenu)
         popUpFrame.addSubview(imageView)
-        
+                
     }
     
     
@@ -79,9 +83,10 @@ class TabBarController: UITabBarController {
 }
 
 extension TabBarController: UITabBarControllerDelegate {
+    
    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
+
         if  viewController.tabBarItem.title == "Add" {
             currentView = tabBarController.selectedViewController!.view!
             popUpFrame.frame.size = CGSize(width: (view.frame.width / 2) + 100, height: 140)
@@ -100,37 +105,35 @@ extension TabBarController: UITabBarControllerDelegate {
 
             currentView.addSubview(popUpFrame)
             currentView.bringSubviewToFront(popUpFrame)
+            self.viewControllerChoosen = viewController
             return false
-            
+
         } else {
+
             removePopupFromSuperView()
             return true
         }
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
+
         switch item.title {
             case "Add":
                 item.isEnabled = false
             default:
                 tabBar.items?[2].isEnabled = true
         }
-    
     }
-    
     
     @objc func popupButtonPressed(_ sender:UIButton) {
         let navVC = self.viewControllers![2] as! AddViewController
         
         if sender.titleLabel?.text == "Saving Goal" {
             //WORKS СДЕЛАТЬ ЧЕРЕЗ ЭТОТ МЕТОД
-            
             navVC.typeView = "Saving Goal"
             protocolDelegate?.typeOfViewController()
             self.selectedIndex = 2
             removePopupFromSuperView()
-            
             
         } else if sender.titleLabel?.text == "Transaction" {
             navVC.typeView = "Transaction"
@@ -139,6 +142,9 @@ extension TabBarController: UITabBarControllerDelegate {
             removePopupFromSuperView()
             
         } else if sender.titleLabel?.text == "Category" {
+            self.nameView = "Category"
+//            let vcCategory = storyboard?.instantiateViewController(withIdentifier: "Category") as? NewCategoryViewController
+//            let navVC = self.viewControllers![2] as? NewCategoryViewController
             navVC.typeView = "Category"
             protocolDelegate?.typeOfViewController()
             self.selectedIndex = 2
@@ -157,6 +163,8 @@ extension TabBarController: UITabBarControllerDelegate {
         popUpFrame.removeFromSuperview()
         popUpFrame.alpha = 0
     }
+    
+    
     
 }
 

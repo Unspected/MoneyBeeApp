@@ -14,24 +14,39 @@ class AddViewController: UIViewController {
     
     var typeView: String?
     
+    @IBOutlet weak var viewStyle: UIView!
+    
+    let testView: UIView = {
+        let view = CategoryContainer()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         typeOfViewController()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//          testView.translatesAutoresizingMaskIntoConstraints = false
+//          view.addSubview(testView)
         typeOfViewController()
+    }
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        
     }
     
     
 }
 
-extension AddViewController: TabControllerDelegate {
+extension AddViewController: MenuControllerDelegate {
     
     
-    // ИСПОЛЬЗОВАТЬ ЮЗЕР ДАТУ UserDefault
     func typeOfViewController() {
         if self.typeView == "Category" {
             newCategoryView()
@@ -44,24 +59,22 @@ extension AddViewController: TabControllerDelegate {
         
     }
     
-    
     func newSavingGoalView() {
         self.mainTitle.text = "New Saving Goal"
-        view.backgroundColor = .red
     }
     
     func newTransactionView() {
         self.mainTitle.text = "New Transaction"
-        view.backgroundColor = .blue
     }
     
     func newCategoryView() {
         self.mainTitle.text = "New Category"
-        view.backgroundColor = .green
+        viewStyle.addSubview(testView)
+        
     }
     
-    
 }
+
 
 
 

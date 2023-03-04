@@ -8,12 +8,16 @@
 import UIKit
 
 class NewCategoryViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var categoryTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
+    
     
 
     /*

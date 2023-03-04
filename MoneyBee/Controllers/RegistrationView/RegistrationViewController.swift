@@ -33,17 +33,16 @@ class RegistrationViewController: UIViewController {
         setupTextFieldViews(firstNameTextField)
         setupTextFieldViews(lastNameTextField)
         setupTextFieldViews(passwordTextField)
-        changeElementsConstrains()
+        changeConstrains()
        
     }
     
-    func changeElementsConstrains() {
+    func changeConstrains() {
         let deviceSize = UIScreen.main.bounds.size.height
         if deviceSize < 700 {
             logoTopConstrains.constant = 0
             createBtnTopConstraint.constant = 40
         }
-        
     }
     
     

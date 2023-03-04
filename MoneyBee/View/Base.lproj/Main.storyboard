@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIO-Ei-Q3O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <accessibilityOverrides/>
     <dependencies>
@@ -405,7 +405,7 @@
         <!--Account-->
         <scene sceneID="Sjs-Ip-kqL">
             <objects>
-                <viewController title="Account" id="qpH-qL-Vmb" sceneMemberID="viewController">
+                <viewController restorationIdentifier="account" storyboardIdentifier="account" title="Account" id="qpH-qL-Vmb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PPk-JW-hTM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -445,7 +445,7 @@
         <!--Add-->
         <scene sceneID="2hJ-Kw-ew3">
             <objects>
-                <viewController restorationIdentifier="AddController" storyboardIdentifier=" AddController" title="Add" id="ITc-wE-JVf" customClass="AddViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AddController" storyboardIdentifier=" AddController" title="Add" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="pageSheet" id="ITc-wE-JVf" customClass="AddViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lQz-41-uw7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -467,39 +467,51 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNG-Xn-yFB">
-                                <rect key="frame" x="123.5" y="210" width="167" height="30.5"/>
+                                <rect key="frame" x="123.5" y="175" width="167" height="30.5"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="26"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKv-H7-d9J">
-                                <rect key="frame" x="0.0" y="263" width="414" height="518"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-4k-kWv">
+                                <rect key="frame" x="0.0" y="225.5" width="414" height="670.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-oJ-gWr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="670.5"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lKt-oJ-gWr" firstAttribute="top" secondItem="CTp-4k-kWv" secondAttribute="top" id="LWK-b2-2Yi"/>
+                                    <constraint firstAttribute="bottom" secondItem="lKt-oJ-gWr" secondAttribute="bottom" id="YnM-7W-n1Z"/>
+                                    <constraint firstItem="lKt-oJ-gWr" firstAttribute="centerX" secondItem="CTp-4k-kWv" secondAttribute="centerX" id="a0L-Us-cPe"/>
+                                    <constraint firstAttribute="trailing" secondItem="lKt-oJ-gWr" secondAttribute="trailing" id="gRN-QN-OW1"/>
+                                    <constraint firstItem="lKt-oJ-gWr" firstAttribute="centerY" secondItem="CTp-4k-kWv" secondAttribute="centerY" id="i8p-qu-Gph"/>
+                                    <constraint firstItem="lKt-oJ-gWr" firstAttribute="leading" secondItem="CTp-4k-kWv" secondAttribute="leading" id="kIY-2P-XwV"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lky-Co-QN7"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rKv-H7-d9J" firstAttribute="leading" secondItem="Lky-Co-QN7" secondAttribute="leading" id="9V3-HO-JMa"/>
+                            <constraint firstItem="CTp-4k-kWv" firstAttribute="top" secondItem="MNG-Xn-yFB" secondAttribute="bottom" constant="20" id="5hc-QM-tv9"/>
+                            <constraint firstItem="CTp-4k-kWv" firstAttribute="trailing" secondItem="Lky-Co-QN7" secondAttribute="trailing" id="9DG-oW-GyA"/>
                             <constraint firstItem="hO2-Ja-Zal" firstAttribute="trailing" secondItem="Lky-Co-QN7" secondAttribute="trailing" id="Cme-5t-juG"/>
-                            <constraint firstItem="Lky-Co-QN7" firstAttribute="trailing" secondItem="rKv-H7-d9J" secondAttribute="trailing" id="F4H-KS-F8x"/>
+                            <constraint firstItem="CTp-4k-kWv" firstAttribute="leading" secondItem="Lky-Co-QN7" secondAttribute="leading" id="HIM-Vr-oSl"/>
                             <constraint firstItem="hO2-Ja-Zal" firstAttribute="top" secondItem="lQz-41-uw7" secondAttribute="top" id="KiI-SV-zLD"/>
-                            <constraint firstItem="rKv-H7-d9J" firstAttribute="top" secondItem="MNG-Xn-yFB" secondAttribute="bottom" constant="22.5" id="MeB-UC-715"/>
                             <constraint firstItem="hO2-Ja-Zal" firstAttribute="leading" secondItem="lQz-41-uw7" secondAttribute="leading" id="Z4q-U5-ayg"/>
-                            <constraint firstItem="MNG-Xn-yFB" firstAttribute="top" secondItem="hO2-Ja-Zal" secondAttribute="bottom" constant="60" id="hGs-Vd-dSi"/>
-                            <constraint firstItem="Lky-Co-QN7" firstAttribute="bottom" secondItem="rKv-H7-d9J" secondAttribute="bottom" constant="32" id="oDn-1z-JMb"/>
+                            <constraint firstItem="MNG-Xn-yFB" firstAttribute="top" secondItem="hO2-Ja-Zal" secondAttribute="bottom" constant="25" id="hGs-Vd-dSi"/>
+                            <constraint firstAttribute="bottom" secondItem="CTp-4k-kWv" secondAttribute="bottom" id="rKs-dE-MHG"/>
                             <constraint firstItem="MNG-Xn-yFB" firstAttribute="centerX" secondItem="lQz-41-uw7" secondAttribute="centerX" id="t01-n0-Jdh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" id="eg5-OY-7Sc">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="413" height="896"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainTitle" destination="MNG-Xn-yFB" id="CLt-xL-DzU"/>
-                        <segue destination="9W5-f3-vdW" kind="presentation" identifier="newCategorySegue" modalPresentationStyle="fullScreen" id="YoJ-A4-0Iz"/>
-                        <segue destination="fS4-wO-2kx" kind="presentation" identifier="newTrasactionSegue" modalPresentationStyle="fullScreen" id="jIC-NU-4OW"/>
-                        <segue destination="8rU-rZ-zog" kind="presentation" modalPresentationStyle="fullScreen" id="8s1-le-aNk"/>
+                        <outlet property="viewStyle" destination="lKt-oJ-gWr" id="lsZ-ur-gd9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fJ-HW-3eS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -531,13 +543,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGl-NJ-gdG">
-                                <rect key="frame" x="130" y="210" width="154" height="30.5"/>
+                                <rect key="frame" x="130" y="175" width="154" height="30.5"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="26"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-Py-74I">
-                                <rect key="frame" x="5" y="265.5" width="404" height="630.5"/>
+                                <rect key="frame" x="5" y="230.5" width="404" height="665.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="HDe-f2-h6g">
                                     <size key="itemSize" width="207" height="128"/>
@@ -566,7 +578,7 @@
                             <constraint firstItem="VGl-NJ-gdG" firstAttribute="centerX" secondItem="sYs-sp-77P" secondAttribute="centerX" id="azn-5T-mTQ"/>
                             <constraint firstItem="PUr-zo-Gyi" firstAttribute="trailing" secondItem="cBG-hP-bZe" secondAttribute="trailing" id="eIp-uj-MJo"/>
                             <constraint firstAttribute="bottom" secondItem="Ioe-Py-74I" secondAttribute="bottom" id="fnf-Zr-upc"/>
-                            <constraint firstItem="VGl-NJ-gdG" firstAttribute="top" secondItem="PUr-zo-Gyi" secondAttribute="bottom" constant="60" id="mhg-TY-HW9"/>
+                            <constraint firstItem="VGl-NJ-gdG" firstAttribute="top" secondItem="PUr-zo-Gyi" secondAttribute="bottom" constant="25" id="mhg-TY-HW9"/>
                             <constraint firstItem="PUr-zo-Gyi" firstAttribute="leading" secondItem="cBG-hP-bZe" secondAttribute="leading" id="q0P-rL-5Iq"/>
                             <constraint firstItem="Ioe-Py-74I" firstAttribute="top" secondItem="VGl-NJ-gdG" secondAttribute="bottom" constant="25" id="qKY-7M-DfE"/>
                         </constraints>
@@ -583,7 +595,7 @@
         <!--Budget-->
         <scene sceneID="URA-5Z-lgD">
             <objects>
-                <viewController title="Budget" id="A71-8m-7j0" customClass="BudgetViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="budget" storyboardIdentifier="budget" title="Budget" id="A71-8m-7j0" customClass="BudgetViewController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9y-U1-x2X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -605,7 +617,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wud-1d-jhz">
-                                <rect key="frame" x="164.5" y="210" width="85" height="31"/>
+                                <rect key="frame" x="164.5" y="175" width="85" height="31"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Budget">
                                         <attributes>
@@ -622,7 +634,7 @@
                         <constraints>
                             <constraint firstItem="iyZ-IA-i6c" firstAttribute="leading" secondItem="Uhj-Sz-Doq" secondAttribute="leading" id="02h-au-iPq"/>
                             <constraint firstItem="iyZ-IA-i6c" firstAttribute="trailing" secondItem="Uhj-Sz-Doq" secondAttribute="trailing" id="1Qy-Fv-g0P"/>
-                            <constraint firstItem="Wud-1d-jhz" firstAttribute="top" secondItem="iyZ-IA-i6c" secondAttribute="bottom" constant="60" id="5oF-Xh-oA6"/>
+                            <constraint firstItem="Wud-1d-jhz" firstAttribute="top" secondItem="iyZ-IA-i6c" secondAttribute="bottom" constant="25" id="5oF-Xh-oA6"/>
                             <constraint firstItem="iyZ-IA-i6c" firstAttribute="top" secondItem="p9y-U1-x2X" secondAttribute="top" id="dL4-jw-hTi"/>
                             <constraint firstItem="Wud-1d-jhz" firstAttribute="centerX" secondItem="p9y-U1-x2X" secondAttribute="centerX" id="tnn-zt-aGd"/>
                         </constraints>
@@ -793,9 +805,6 @@
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="Back">
                                     <color key="baseForegroundColor" name="textColor"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="NIO-Ei-Q3O" kind="presentation" modalPresentationStyle="fullScreen" id="wve-zR-zA2"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4im-31-LqS"/>
@@ -873,9 +882,6 @@
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="Back">
                                     <color key="baseForegroundColor" name="textColor"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="NIO-Ei-Q3O" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="P1Y-Cf-zPH"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ipR-Vo-qJW">
                                 <rect key="frame" x="40" y="296" width="334" height="80"/>
@@ -956,6 +962,9 @@
                             <constraint firstItem="IHI-za-eKQ" firstAttribute="leading" secondItem="GZB-C8-tT7" secondAttribute="leading" constant="60" id="vfw-u7-x0Z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryTitle" destination="OkK-wj-Kek" id="8uz-18-0Ee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPx-MS-Vg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -986,7 +995,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7K2-Iy-Kmi">
-                                <rect key="frame" x="143" y="210" width="128" height="30.5"/>
+                                <rect key="frame" x="143" y="175" width="128" height="30.5"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="26"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -996,7 +1005,7 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="R6s-fD-oUM" firstAttribute="trailing" secondItem="cHj-kp-6Ne" secondAttribute="trailing" id="1VU-Xs-4cE"/>
-                            <constraint firstItem="7K2-Iy-Kmi" firstAttribute="top" secondItem="R6s-fD-oUM" secondAttribute="bottom" constant="60" id="Wh5-x3-lMH"/>
+                            <constraint firstItem="7K2-Iy-Kmi" firstAttribute="top" secondItem="R6s-fD-oUM" secondAttribute="bottom" constant="25" id="Wh5-x3-lMH"/>
                             <constraint firstItem="R6s-fD-oUM" firstAttribute="top" secondItem="Qwh-id-viK" secondAttribute="top" id="bSi-Db-iAL"/>
                             <constraint firstItem="R6s-fD-oUM" firstAttribute="leading" secondItem="cHj-kp-6Ne" secondAttribute="leading" id="gFp-9y-2EZ"/>
                             <constraint firstItem="7K2-Iy-Kmi" firstAttribute="centerX" secondItem="Qwh-id-viK" secondAttribute="centerX" id="rAd-Fs-Udf"/>
@@ -1011,7 +1020,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="l7A-fX-hGO">
             <objects>
-                <tabBarController restorationIdentifier="tabBarController" storyboardIdentifier="tabBarController" id="NIO-Ei-Q3O" customClass="TabBarController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="NIO-Ei-Q3O" customClass="TabBarController" customModule="MoneyBee" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" restorationIdentifier="tabBar" insetsLayoutMarginsFromSafeArea="NO" id="40v-Fb-nsS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1050,9 +1060,6 @@
             <size key="intrinsicContentSize" width="76" height="34.5"/>
         </designable>
     </designables>
-    <inferredMetricsTieBreakers>
-        <segue reference="wve-zR-zA2"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Budget" width="25" height="25"/>
         <image name="Dashboard" width="30" height="30"/>
