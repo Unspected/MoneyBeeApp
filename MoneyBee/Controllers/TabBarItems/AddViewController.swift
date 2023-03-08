@@ -14,19 +14,29 @@ class AddViewController: UIViewController {
     
     var typeView: String?
     
-    @IBOutlet weak var viewStyle: UIView!
+    @IBOutlet weak var categoryView: NewCategoryView!
     
-    let testView: UIView = {
-        let view = CategoryContainer()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    @IBOutlet weak var transactionView: NewTransactionView!
+    
+    
+    @IBOutlet weak var savingGoalView: NewSavingGoalView!
+    
+    // New Category View Container located in file CategoryContainer
+//    let newCategoryView: UIView = {
+//        let view = NewCategoryView()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        categoryView.isHidden = true
+        transactionView.isHidden = true
+        savingGoalView.isHidden = true
         typeOfViewController()
+        
         
     }
     
@@ -34,11 +44,10 @@ class AddViewController: UIViewController {
         super.viewWillAppear(animated)
 //          testView.translatesAutoresizingMaskIntoConstraints = false
 //          view.addSubview(testView)
+        categoryView.isHidden = true
+        transactionView.isHidden = true
+        savingGoalView.isHidden = true
         typeOfViewController()
-    }
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-        
     }
     
     
@@ -49,27 +58,12 @@ extension AddViewController: MenuControllerDelegate {
     
     func typeOfViewController() {
         if self.typeView == "Category" {
-            newCategoryView()
+            categoryView.isHidden = false
         } else if self.typeView == "Transaction" {
-            newTransactionView()
+            transactionView.isHidden = false
         } else {
-            newSavingGoalView()
+            savingGoalView.isHidden = false
         }
-        
-        
-    }
-    
-    func newSavingGoalView() {
-        self.mainTitle.text = "New Saving Goal"
-    }
-    
-    func newTransactionView() {
-        self.mainTitle.text = "New Transaction"
-    }
-    
-    func newCategoryView() {
-        self.mainTitle.text = "New Category"
-        viewStyle.addSubview(testView)
         
     }
     
